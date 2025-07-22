@@ -1,0 +1,170 @@
+/* General Reset */
+body {
+    font-family: "Tahoma", Arial, sans-serif;
+    background-color: #c0c0c0; /* Windows XP desktop gray */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    transform: scale(0.9); /* Apply 90% zoom-out */
+    transform-origin: top left; /* Ensure scaling starts from the top-left corner */
+    width: 111.11%; /* Compensate for the zoom-out to avoid horizontal scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+/* Window Container */
+.window {
+    background-color: #f0f0f0; /* Light gray background */
+    border: 2px solid #808080; /* Dark gray border */
+    border-radius: 6px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 1200px;
+    padding: 10px;
+}
+
+/* Title Bar (Windows XP Style) */
+.title-bar {
+    background: linear-gradient(to bottom, #000080, #000040); /* XP blue gradient */
+    color: #fff;
+    padding: 8px 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px 4px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title-bar .buttons {
+    display: flex;
+    gap: 5px;
+}
+.button {
+    background-color: #cccccc; /* Windows XP button gray */
+    border: 1px solid #808080; /* Dark gray border */
+    padding: 4px 8px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #333;
+    transition: background-color 0.2s ease-in-out;
+}
+.button:hover {
+    background-color: #b0b0b0; /* Slightly darker gray on hover */
+}
+
+/* Content Area */
+.content {
+    padding: 20px;
+    background-color: #f9f9f9; /* Light gray background */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Tables */
+table {
+    width: 98%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+table th {
+    background-color: #cccccc; /* XP-style table header */
+    color: #333;
+}
+table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Alternating row colors */
+}
+table tr:hover {
+    background-color: #e6e6e6; /* Hover effect */
+}
+
+/* Footer */
+.admin-footer {
+    background-color: #000080; /* Classic Windows XP blue */
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 12px;
+}
+
+/* Loading Screen */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fadeOut 3s forwards;
+}
+.loading-screen h1 {
+    font-size: 24px;
+    color: #000080;
+    margin-bottom: 20px;
+}
+.boot-message {
+    font-size: 14px;
+    color: #555;
+}
+.loading-bar {
+    width: 300px;
+    height: 20px;
+    background-color: #cccccc;
+    border: 1px solid #808080;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.loading-bar span {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(to right, #000080, #0000ff);
+    animation: loadProgress 2s forwards;
+}
+@keyframes loadProgress {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* System Time Animation */
+#system-time {
+    font-weight: bold;
+    color: #00ff00; /* Green text for retro effect */
+    animation: blink 1s infinite;
+}
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}

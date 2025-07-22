@@ -1,0 +1,76 @@
+ACTUALIZACIÓN - VERSIÓN SIMPLE PARA DEBUGGING
+=============================================
+
+He creado una versión simplificada para identificar el problema:
+
+ARCHIVOS CREADOS:
+✅ index.php - Versión simplificada con mejor debugging
+✅ ecommerce_simple.sql - Base de datos mínima para testing
+
+CAMBIOS PRINCIPALES:
+====================
+
+1. INDEX.PHP SIMPLIFICADO:
+   - Reemplazé AuthManager con verificación simple de sesión
+   - Agregué display_errors y error_reporting para ver errores
+   - Manejo de errores mejorado con try-catch
+   - Redirección simple pero funcional
+   - Eliminé dependencias complejas
+
+2. BASE DE DATOS SIMPLE (ecommerce_simple.sql):
+   - Solo 3 tablas básicas: users, products, settings
+   - Usuarios de prueba incluidos
+   - Contraseñas simples para testing
+
+CREDENCIALES DE PRUEBA:
+======================
+Usuario: admin
+Contraseña: secret
+
+Usuario: testuser
+Contraseña: secret
+
+PASOS PARA PROBAR LA VERSIÓN SIMPLE:
+====================================
+
+1. IMPORTAR BASE DE DATOS SIMPLE:
+   - Abre phpMyAdmin
+   - Importa: ecommerce_simple.sql
+   - Esto creará la base de datos completa con usuarios de prueba
+
+2. PROBAR LOGIN:
+   - Ve a tu aplicación
+   - Intenta acceder a index.php
+   - Debería redirigir a login.php
+   - Prueba login con: admin / secret
+
+3. SI SIGUE SIN FUNCIONAR:
+   - Ve directamente a includes/db.php en el navegador
+   - Verás el error exacto de base de datos
+   - Ve a login.php y verás errores específicos en pantalla
+
+ARCHIVOS ELIMINADOS:
+===================
+- index_new.php (muy complejo)
+- index.php.backup (duplicado)
+
+DEBUGGING HABILITADO:
+====================
+Agregué estas líneas al inicio de index.php:
+```php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+```
+
+Esto mostrará TODOS los errores en pantalla para que puedas ver exactamente qué está fallando.
+
+PRÓXIMOS PASOS:
+==============
+1. Importa ecommerce_simple.sql
+2. Prueba el login
+3. Me dices qué errores específicos ves ahora
+4. Una vez que funcione, podemos volver a la versión completa
+
+La versión simple debería funcionar inmediatamente. Si no funciona, verás errores específicos que me ayudarán a identificar el problema exacto.
+
+========================================
